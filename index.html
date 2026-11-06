@@ -1,0 +1,210 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Presentación de equipos de fútbol de anime">
+    <title>Anime Football - Equipos</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- ENCABEZADO -->
+    <header class="header">
+        <div class="container nav-container">
+
+            <a href="#" class="logo">
+                <span class="logo-icon">⚽</span>
+                <span>ANIME <strong>FOOTBALL</strong></span>
+            </a>
+
+            <nav class="navbar">
+                <a href="#inicio" class="active">Inicio</a>
+                <a href="#equipos">Equipos</a>
+                <a href="#competiciones">Competiciones</a>
+                <a href="#acerca">Acerca de</a>
+            </nav>
+
+            <a href="#equipos" class="nav-button">VER EQUIPOS ↗</a>
+
+            <button class="menu-toggle" id="menuToggle">☰</button>
+        </div>
+    </header>
+
+    <!-- PORTADA -->
+    <main>
+
+        <section class="hero" id="inicio">
+            <div class="hero-overlay"></div>
+
+            <div class="container hero-content">
+                <span class="hero-tag">⚡ FÚTBOL • ANIME • COMPETICIÓN</span>
+
+                <h1>
+                    MÁS QUE UN EQUIPO.<br>
+                    <span>UNA LEYENDA.</span>
+                </h1>
+
+                <p>
+                    Descubre los equipos, jugadores y plantillas
+                    que forman parte de este universo futbolístico.
+                </p>
+
+                <a href="#equipos" class="primary-button">
+                    EXPLORAR EQUIPOS <span>→</span>
+                </a>
+            </div>
+
+            <div class="hero-bottom">
+                <span>ANIME FOOTBALL PROJECT</span>
+                <span>01 / PRESENTACIÓN</span>
+            </div>
+        </section>
+
+        <!-- ESTADÍSTICAS -->
+        <section class="stats-section">
+            <div class="container stats-grid">
+
+                <div class="stat">
+                    <span class="stat-number" id="teamCount">00</span>
+                    <span class="stat-label">EQUIPOS</span>
+                </div>
+
+                <div class="stat">
+                    <span class="stat-number">ANIME</span>
+                    <span class="stat-label">UNIVERSO</span>
+                </div>
+
+                <div class="stat">
+                    <span class="stat-number">2026</span>
+                    <span class="stat-label">TEMPORADA</span>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- EQUIPOS -->
+        <section class="teams-section" id="equipos">
+            <div class="container">
+
+                <div class="section-heading">
+                    <div>
+                        <span class="section-tag">NUESTROS CLUBES</span>
+                        <h2>EQUIPOS <span>DESTACADOS</span></h2>
+                        <p>Conoce los equipos y sus respectivas plantillas.</p>
+                    </div>
+
+                    <div class="team-counter">
+                        <span id="visibleCount">00</span> EQUIPOS
+                    </div>
+                </div>
+
+                <!-- FILTROS -->
+                <div class="filters">
+                    <button class="filter-btn active" data-filter="todos">
+                        TODOS
+                    </button>
+
+                    <button class="filter-btn" data-filter="japon">
+                        JAPÓN
+                    </button>
+
+                    <button class="filter-btn" data-filter="internacional">
+                        INTERNACIONAL
+                    </button>
+
+                    <button class="filter-btn" data-filter="otros">
+                        OTROS
+                    </button>
+                </div>
+
+                <!-- TARJETAS GENERADAS CON JAVASCRIPT -->
+                <div class="teams-grid" id="teamsGrid"></div>
+
+                <div class="empty-message" id="emptyMessage">
+                    No hay equipos en esta categoría.
+                </div>
+
+            </div>
+        </section>
+
+        <!-- COMPETICIONES -->
+        <section class="competition-section" id="competiciones">
+            <div class="container competition-content">
+
+                <div>
+                    <span class="section-tag">EL CAMINO A LA GLORIA</span>
+                    <h2>COMPETICIONES</h2>
+                    <p>
+                        Diferentes equipos, diferentes historias
+                        y un mismo objetivo: alcanzar la victoria.
+                    </p>
+                </div>
+
+                <div class="competition-decoration">
+                    <span>🏆</span>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ACERCA DE -->
+        <section class="about-section" id="acerca">
+            <div class="container about-content">
+
+                <span class="section-tag">SOBRE EL PROYECTO</span>
+
+                <h2>UN UNIVERSO DE<br><span>FÚTBOL Y ANIME.</span></h2>
+
+                <p>
+                    Este espacio reúne equipos de diferentes universos
+                    del anime, sus jugadores, uniformes y competiciones.
+                </p>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="footer">
+        <div class="container footer-content">
+
+            <div class="logo">
+                ⚽ ANIME <strong>FOOTBALL</strong>
+            </div>
+
+            <p>Proyecto personal de presentación de equipos.</p>
+
+            <span>© 2026 - TODOS LOS DERECHOS RESERVADOS</span>
+
+        </div>
+    </footer>
+
+    <!-- VENTANA DE PLANTILLA -->
+    <div class="modal" id="teamModal">
+        <div class="modal-content">
+
+            <button class="modal-close" id="modalClose">✕</button>
+
+            <div class="modal-header">
+                <img src="" alt="Escudo del equipo" id="modalLogo">
+
+                <div>
+                    <span class="section-tag">PLANTILLA OFICIAL</span>
+                    <h2 id="modalName">EQUIPO</h2>
+                    <p id="modalCountry">PAÍS</p>
+                </div>
+            </div>
+
+            <div class="roster-grid" id="rosterGrid"></div>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
